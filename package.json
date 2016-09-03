@@ -1,0 +1,24 @@
+{
+  "name": "vmstat",
+  "version": "0.0.1",
+  "description": "A node based vmstat, that gets a data stream in the format of vmstat for both Windows and Linux.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TRex22/vmstat.git"
+  },
+  "keywords": [
+    "vmstat",
+    "windows",
+    "linux"
+  ],
+  "author": "Jason Chalom @TRex22",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TRex22/vmstat/issues"
+  },
+  "homepage": "https://github.com/TRex22/vmstat#readme"
+}
