@@ -1,0 +1,72 @@
+vmstat -n 1 output
+procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu----
+r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa
+3  0  43652 2742600 453820 2829164    0    0     1    10    0    0  6  1 93  0
+1  0  43652 2742784 453820 2829164    0    0     0     0 3106 5701 11  1 87  0
+0  0  43652 2742908 453820 2829164    0    0     0     0 3898 6703 11  2 87  0
+1  0  43652 2743672 453820 2829164    0    0     0    32 3844 6708 11  2 87  0
+2  0  43652 2743980 453820 2829164    0    0     0    80 4130 7164 11  2 87  0
+
+{"startTime":"2016-09-03T17:34:17.271Z","nodeVersion":"v6.1.0","pid":7044,
+"loadAvg":[0,0,0],"memoryUsage":"41M","freeMemory":"4216M","upTime":110.621,"env":"development","hostname":"Fractal","serverIp":["192.168.56.1","192.168.0.103"]}
+
+Proc:  
+------- 
+r: How many processes are waiting for CPU time. 
+b: Wait Queue - Process which are waiting for I/O (disk, network, user  
+    input,etc..)  
+
+
+Memory:  
+----------- 
+swpd: shows how many blocks are swapped out to disk (paged). Total Virtual   
+memory usage. 
+
+Note: you can see the swap area configured in server using  "cat  proc/swaps" 
+
+
+free: Idle Memory  
+buff: Memory used as buffers, like before/after I/O operations 
+cache: Memory used as cache by the Operating System 
+
+
+Swap:  
+--------- 
+si: How many blocks per second the operating system is swapping in. i.e  
+    Memory swapped in from the disk (Read from swap area to Memory) 
+so: How many blocks per second the operating system is swaped Out. i.e  
+     Memory swapped to the disk  (Written to swap area and cleared from  
+     Memory) 
+
+
+In Ideal condition, We like to see si and so at 0 most of the time, and we definitely don’t like to see more than 10 blocks per second. 
+
+
+IO: 
+------ 
+bi: Blocks received from block device - Read (like a hard disk)  
+bo: Blocks sent to a block device - Write 
+
+
+System:  
+------------- 
+in: The number of interrupts per second, including the clock.  
+cs: The number of context switches per second.  
+
+
+CPU: 
+-------- 
+us: percentage of cpu used for running non-kernel code. (user time, including  
+     nice time)  
+sy: percentage of cpu used for running kernel code. (system time - network, IO  
+     interrupts, etc)  
+id: cpu idle time in percentage. 
+wa: percentage of time spent by cpu for waiting to IO. 
+
+
+
+
+If you used to monitor this data, you can understand how is your server doing during peak usage times.  
+
+
+Note: the memory, swap, and I/O statistics are in blocks, not in bytes. In Linux, blocks are usually 1,024 bytes (1 KB).

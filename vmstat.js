@@ -1,5 +1,5 @@
 const os = require('os');
-var logger = require("../logger/logger");
+/*var logger = require("../logger/logger");*/
 var simpleInfo = require('simple-node-info');
 
 function vmstat() {
@@ -11,7 +11,7 @@ function vmstat() {
         const exec = require('child_process').exec;
         exec('vmstat -n 1', (error, stdout, stderr) => {
             if (error) {
-                logger.error(`exec error: ${error}`);
+                console.err(`exec error: ${error}`);
                 return;
             }
             console.log(`stdout: ${stdout}`);
