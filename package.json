@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/TRex22/vmstat/issues"
   },
-  "homepage": "https://github.com/TRex22/vmstat#readme"
+  "homepage": "https://github.com/TRex22/vmstat#readme",
+  "dependencies": {
+    "simple-node-info": "0.0.2"
+  }
 }
